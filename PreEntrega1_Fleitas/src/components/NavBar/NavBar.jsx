@@ -2,7 +2,7 @@ import images from "../imagenes/images"
 import "./NavBar.css"
 import CartWidget from "../CartWidget/CartWidget"
 
-const navbar = ()=> {
+const navbar = ({CartCount})=> {
     return (
         <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -12,6 +12,7 @@ const navbar = ()=> {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <a className="nav-link" id="inicio" href="#">Inicio</a>
@@ -26,9 +27,11 @@ const navbar = ()=> {
                             <a className="nav-link" id="sobreNosotros" href="#">Sobre nosotros</a>
                         </li>
                     </ul>
+
                     <form className="d-flex" role="search">
-                        <CartWidget/>
+                    <CartWidget CartCount={CartCount}/> 
                     </form>
+
                 </div>
             </div>
         </nav>
