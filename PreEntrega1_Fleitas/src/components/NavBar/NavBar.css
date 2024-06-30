@@ -1,0 +1,52 @@
+.nav-item {
+    margin-right: 30px;
+}
+
+.navbar{
+    padding: 20px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 10px 25px;;
+    border-radius: 20px; 
+    width: 150px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+#imagen {
+    position: absolute;
+    left: 100px;
+    width: 230px;
+    height: auto;
+}
+
+/* Estilos área de los botones del navbar */
+#inicio:hover {
+    background: rgb(0,199,236);
+    border-radius: 20px;
+    transform: scale(1.05);
+    color: white;
+}
+
+#productos:hover {
+    background: rgb(255,66,94);
+    border-radius: 20px;
+    transform: scale(1.05);
+    color: white;
+}
+
+#envios:hover {
+    background: rgb(255,183,0);
+    border-radius: 20px;
+    transform: scale(1.05);
+    color: white;
+}
+
+#sobreNosotros:hover {
+    background: rgb(12,12,12);
+    border-radius: 20px;
+    transform: scale(1.05);
+    color: white;
+}
