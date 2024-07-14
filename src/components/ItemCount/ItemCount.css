@@ -1,0 +1,30 @@
+.item-count {
+    display: flex;
+    align-items: center;
+}
+
+.countDecrement-button, .countIncrement-button{
+    padding: 10px 15px;
+    font-size: 15px;
+    background-color: rgb(255,183,0);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.countDecrement-button:hover {
+    background-color: rgba(190, 5, 5, 0.747);
+}
+
+.countIncrement-button:hover {
+    background-color: rgba(24, 170, 5, 0.767);
+}
+
+.count-display {
+    font-size: 20px;
+    margin: 0 5px;
+    width: 40px;
+    text-align: center;
+}

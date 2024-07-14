@@ -4,9 +4,9 @@ const products = [
         name: "Collar para gatos estilo galaxia",
         price: 400,
         category: "ropa",
-        img: "https://m.media-amazon.com/images/I/61m64qh5EVL._AC_.jpg",
+        img: "https://i.pinimg.com/564x/51/89/7b/51897b0bd80923fe4c8dc820fcc1a900.jpg",
         stock: 25,
-        description: "Collar para gatos con diseño de galaxia. Incluye chapa de identificación con diseño de planeta.",
+        description: "Collar para gatos con diseño de galaxia. Incluye chapa de identificación con diseño de astronauta.",
     },
     {
         id: "2",

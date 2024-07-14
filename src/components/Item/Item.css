@@ -1,45 +1,45 @@
-.Item {
-    background-color: #fff;
-    border: 1px solid #ddd;
+.item {
+    border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
     margin-bottom: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.Item h1 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
+.item-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; 
 }
 
-.Item img {
-    max-width: 100%;
+.item-image {
+    width: 100%;
     height: auto;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+}
+
+.item-info {
+    padding: 10px;
+}
+
+.item-price {
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
-.Item p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.Item h3 {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.Item hr {
-    border-color: #ddd;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.Item a {
+.btn {
+    background-color: black;
+    color: #fff;
     text-decoration: none;
-    color: #007bff;
+    padding: 8px 25px;
+    transition: background-color 0.3s ease;
 }
 
-.Item a:hover {
-    text-decoration: underline;
+.btn:hover {
+    background-color: #333;
 }
