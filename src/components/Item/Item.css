@@ -1,0 +1,45 @@
+.Item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Item h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.Item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.Item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.Item h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.Item hr {
+    border-color: #ddd;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.Item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.Item a:hover {
+    text-decoration: underline;
+}

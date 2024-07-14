@@ -35,6 +35,24 @@ const products = [
         stock: 4,
         description: "Juguete de huesito chillon, ideal para las mascotas juguetonas",
     },
+    {
+        id: "5",
+        name: "Whiskas para gatitos 2-12",
+        price: 300,
+        category: "alimento",
+        img: "https://images.rappi.com.uy/products/820172424753_rebgztsifvvm_232597615745_oycvhyktfsta_55096_1.png",
+        stock: 10,
+        description: "Alimentos marca Whiskas para gatitos entre 2 y 12. Sabor carne y leche ",
+    },
+    {
+        id: "6",
+        name: "Monello Cat sabor salmón, atun y pollo",
+        price: 200,
+        category: "alimento",
+        img: "https://petcol.co/cdn/shop/products/3-1-500x500_500x.png?v=1574804595",
+        stock: 8,
+        description: "Alimento para gatos marca Monello. Sabor salmón, atun y pollo"
+    },
 ];
 
 export const getProducts = () => {

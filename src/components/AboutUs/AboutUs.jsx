@@ -6,7 +6,7 @@ const AboutUs = () => {
         <div className="container mt-5">
             <div className="row align-items-center">
                 <div className="col-md-6">
-                    <h1>Encantados de conocerte</h1>
+                    <h1 className='TittleAbout'>Encantados de conocerte</h1>
                     <p>
                         Somos <span>Puppies</span> una tienda para mascotas que se preocupa por el bienestar de los amigos peludos.
                     </p>
@@ -45,7 +45,7 @@ const AboutUs = () => {
 
                 <div className="row mt-4">
                     <div className="col">
-                        <h1>Únete a Nuestra Familia</h1>
+                        <h1 className='TittleAbout'>Únete a Nuestra Familia</h1>
                         <p>
                             Te invitamos a explorar nuestra tienda y descubrir cómo nuestros productos pueden enriquecer 
                             la vida de tus mascotas. Juntos, podemos asegurarnos de que cada perro y gato reciba el amor 
