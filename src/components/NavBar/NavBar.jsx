@@ -12,16 +12,22 @@ const navbar = ({CartCount})=> {
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" id="inicio" to="/category/inicio">Inicio</Link>
+                            <Link className="nav-link" id="inicio" to="/">Inicio</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" id="productos" to="/category/productos">Productos</Link>
+                            <Link className="nav-link productos" to="/category/ropa">Ropa</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" id="envios" to="/category/envios">Envíos</Link>
+                            <Link className="nav-link productos" to="/category/juguete">Juguetes</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" id="sobreNosotros" to="/category/sobreNosotros">Sobre nosotros</Link>
+                            <Link className="nav-link productos" to="/category/cama">Camas</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link productos" to="/category/comida">Comida</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" id="sobreNosotros" to="/category/About">Sobre nosotros</Link>
                         </li>
                     </ul>
                     <form className="d-flex">

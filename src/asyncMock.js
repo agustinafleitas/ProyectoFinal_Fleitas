@@ -19,15 +19,24 @@ const products = [
     },
     {
         id: "3",
-        name: "Ipad 8va generacion",
-        price: 1200,
-        category: "tablet",
-        img: "https://medias.musimundo.com/medias/00406046-143516-143516-01-143516-01.jpg-size515?context=bWFzdGVyfGltYWdlc3w1MjI1MnxpbWFnZS9qcGVnfGhjMC9oYWMvMTAyODM0OTc0NTU2NDYvMDA0MDYwNDYtMTQzNTE2LTE0MzUxNl8wMS0xNDM1MTZfMDEuanBnX3NpemU1MTV8MzA0NmMzNGFhZjUwMDY2YjY5MjU0MjlkMGJlYWMxODAxZjE5ODJhZmJlOTczZThmZjE2NTQxMjU5NjE2OTA4Yw",
+        name: "Cama forma de gato",
+        price: 1000,
+        category: "cama",
+        img: "https://m.media-amazon.com/images/I/616UW2sxpxL._AC_UF350,350_QL80_.jpg",
         stock: 0,
-        description: "Descripcion de Ipad",
+        description: "Cama para mascotas de color negro con forma de gatos. Comoda y calentita, para que sus mascotas duerman felices",
     },
-  ];
-  
+    {
+        id: "4",
+        name: "Huesito chillon",
+        price: 200,
+        category: "juguete",
+        img: "https://f.fcdn.app/imgs/bc3149/www.elclon.com.uy/clonuy/be0a/original/catalogo/810920-1/460_460/juguete-para-mascota-tipo-hueso-con-chifle-juguete-para-mascota-tipo-hueso-con-chifle.jpg",
+        stock: 4,
+        description: "Juguete de huesito chillon, ideal para las mascotas juguetonas",
+    },
+];
+
 export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
