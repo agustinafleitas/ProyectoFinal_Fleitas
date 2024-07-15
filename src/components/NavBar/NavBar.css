@@ -23,12 +23,19 @@
 }
 
 /* Estilos área de los botones del navbar */
-#inicio:hover {
+#inicio {
     background: rgb(0,199,236);
+    border-radius: 20px;
+    color: white;
+}
+
+#inicio:hover {
+    background: rgb(0, 236, 224);
     border-radius: 20px;
     transform: scale(1.05);
     color: white;
 }
+
 
 .nav-link.productos:hover {
     background: rgb(255,66,94);
@@ -37,8 +44,14 @@
     color: white;
 }
 
-#sobreNosotros:hover {
+#sobreNosotros{
     background: rgb(255,183,0);
+    border-radius: 20px;
+    color: white;
+}
+
+#sobreNosotros:hover {
+    background: rgb(255, 230, 0);
     border-radius: 20px;
     transform: scale(1.05);
     color: white;

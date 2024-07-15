@@ -18,13 +18,13 @@ const navbar = ({CartCount})=> {
                             <Link className="nav-link productos" to="/category/ropa">Ropa</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link productos" to="/category/juguete">Juguetes</Link>
+                            <Link className="nav-link productos" to="/category/juguetes">Juguetes</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link productos" to="/category/cama">Camas</Link>
+                            <Link className="nav-link productos" to="/category/camas">Camas</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link productos" to="/category/collar">Collares</Link>
+                            <Link className="nav-link productos" to="/category/collares">Collares</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" id="sobreNosotros" to="/category/About">Sobre nosotros</Link>

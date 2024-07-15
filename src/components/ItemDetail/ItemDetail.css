@@ -17,6 +17,12 @@
     margin-left: 10px;
 }
 
+
+.category{
+    font-size: 15px;
+    color: #666666d8;
+}
+
   /* Ajustes uso del espacio */
 .item-detail-info {
     flex: 1;
@@ -78,7 +84,13 @@
 
 /* Estilos para los botones de talla */
 .sizes {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.size-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .size-buttons {
@@ -95,11 +107,18 @@
 }
 
 .size-button.selected {
-    background-color: rgb(20, 20, 20);
+    background-color: #007bff;
     color: #fff;
+    border-color: #0056b3;
 }
 
 .size-button:hover {
     background-color: #e2e6ea;
     border-color: #dae0e5;
+}
+
+.selected-size {
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
 }
