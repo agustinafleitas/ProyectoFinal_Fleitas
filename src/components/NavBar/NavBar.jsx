@@ -24,7 +24,7 @@ const navbar = ({CartCount})=> {
                             <Link className="nav-link productos" to="/category/cama">Camas</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link productos" to="/category/alimento">Alimentos</Link>
+                            <Link className="nav-link productos" to="/category/collar">Collares</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" id="sobreNosotros" to="/category/About">Sobre nosotros</Link>
