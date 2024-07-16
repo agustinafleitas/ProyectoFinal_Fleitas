@@ -4,6 +4,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import AboutUs from "./components/AboutUs/AboutUs"
+import images from "./components/imagenes/images";
 
 function App() {
   const [CartCount, setCartCount]= useState(3)
@@ -12,7 +13,18 @@ function App() {
     <BrowserRouter>
       <NavBar CartCount={CartCount}/>
       <Routes>
-        <Route path="/" element={<ItemListContainer greetings="¡Bienvenido a Puppies!" />} />
+      <Route path="/" element={
+          <>
+            <ItemListContainer greetings="¡Bienvenido a Puppies!" />
+            <div className="container mt-4">
+              <div className="row">
+                <div className="col">
+                  <img src={images.EnConstruccion} alt="En Construcción" />
+                </div>
+              </div>
+            </div>
+          </>
+      }/>
         <Route path="/category/:id" element={<ItemListContainer/>} />
         <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
         <Route path="/category/About" element={<AboutUs />}/>
