@@ -17,9 +17,11 @@
 
 #imagen {
     position: absolute;
-    left: 100px;
     width: 230px;
     height: auto;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 50px;
 }
 
 /* Estilos área de los botones del navbar */

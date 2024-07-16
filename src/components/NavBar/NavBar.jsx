@@ -7,8 +7,8 @@ const navbar = ({CartCount})=> {
     return (
         <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <img src={images.MarcaHorizontal} id="imagen"/>
             <div className="container-fluid">
+            <Link to="/"><img src={images.MarcaHorizontal} id="imagen" /></Link> {/*Al hacer click en el icono de "Puppies" redirecciona al inicio*/}
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li className="nav-item">

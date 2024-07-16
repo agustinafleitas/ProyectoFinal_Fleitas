@@ -11,7 +11,7 @@ export const Item = ({ id, name, img, category, price }) => {
         <h5 className="lead">{name}</h5>
         <p className="category lead">Categoria: {category}</p>
         <p className="item-price">${price}</p>
-        <Link to={`/detail/${id}`} className="btn btn-dark">
+        <Link to={`/item/${id}`} className="btn btn-dark">
           Ver Detalles
         </Link>
       </div>
