@@ -1,0 +1,41 @@
+.item-detail-info {
+    position: relative;
+}
+
+.item-count {
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.countDecrement-button,
+.countIncrement-button {
+    width: 50px; 
+    height: 50px;
+    padding: 0; 
+    font-size: 20px;
+    background-color: rgb(255, 183, 0);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px ;
+}
+
+.countDecrement-button:hover {
+    background-color: rgba(190, 5, 5, 0.747);
+}
+
+.countIncrement-button:hover {
+    background-color: rgba(24, 170, 5, 0.767);
+}
+
+.count-display {
+    font-size: 16px;
+    margin: 0 5px;
+    width: 30px;
+    text-align: center;
+}
