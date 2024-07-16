@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProductById, getProducts, getProductsByCategory } from "../../asyncMock";
+import {getProductsByCategory } from "../../asyncMock";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 
