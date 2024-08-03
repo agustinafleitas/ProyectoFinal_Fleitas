@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import AboutUs from "./components/AboutUs/AboutUs"
 import CartWidget from "./components/CartWidget/CartWidget";
+import { CartProvider } from "./context/CartContext";
 import images from "./components/imagenes/images";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <CartProvider>
       <NavBar CartCount={CartCount}/>
       <Routes>
       <Route path="/" element={
@@ -33,6 +35,7 @@ function App() {
         <Route path="/cart" element={<CartWidget/>}/>
         <Route path="*" element={<h1>404 Not found</h1>}/>
       </Routes>
+      </CartProvider>
     </BrowserRouter>
   )
 }
