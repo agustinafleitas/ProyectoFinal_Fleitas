@@ -1,9 +1,20 @@
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 import { useState } from "react";
 
-export const ItemDetail = ({name, img, category, description, stock, price}) => {
+export const ItemDetail = ({name, img, category, description, stock, price, id}) => {
   const [selectedSize, setSelectedSize] = useState(null);
+  const [ObjectCartAdded, SetObjectAdded] = useState(null)
+
+  const handleOnAdd = (quantity) => {
+    const ObjectToAdd = {
+      id, name, price, stock, quantity
+    }
+    console.log(ObjectToAdd)
+    console.log ('se ha agregado', quantity)
+    SetObjectAdded(ObjectToAdd)
+  }
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
@@ -60,10 +71,18 @@ export const ItemDetail = ({name, img, category, description, stock, price}) => 
           </div>
         )}
         
-        <p className="stock lead">Stock disponible: <strong>{stock}</strong> </p>
+        <p className="stock lead">Stock disponible: <strong>{stock}</strong></p>
         <div className="cart-container">
-          <ItemCount stock={stock} />
-          <button className="CartSend">Agregar al carrito</button>
+          {ObjectCartAdded ? (
+            <footer>
+              <Link className="FinalizePurchase" to="/cart">Finalizar compra</Link>
+            </footer>
+          ) : (
+            <>
+              <ItemCount stock={stock} initial={1} onAdd={handleOnAdd} />
+            </>
+          )}
+          
         </div>
       </div>
     </article>
