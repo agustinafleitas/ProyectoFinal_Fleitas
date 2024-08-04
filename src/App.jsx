@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import "./App.css"
 import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
@@ -10,12 +10,11 @@ import { CartProvider } from "./context/CartContext";
 import images from "./components/imagenes/images";
 
 function App() {
-  const [CartCount, setCartCount]= useState(3)
 
   return (
     <BrowserRouter>
     <CartProvider>
-      <NavBar CartCount={CartCount}/>
+      <NavBar/>
       <Routes>
       <Route path="/" element={
           <>

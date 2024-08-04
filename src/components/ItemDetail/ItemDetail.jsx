@@ -2,18 +2,30 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 import { useState } from "react";
+import { useCart } from "../../hooks/useCart";
 
 export const ItemDetail = ({name, img, category, description, stock, price, id}) => {
   const [selectedSize, setSelectedSize] = useState(null);
-  const [ObjectCartAdded, SetObjectAdded] = useState(null)
+  const [objectAdded, SetObjectAdded] = useState(null)
+  const {addItem, IsInCart} = useCart()
 
   const handleOnAdd = (quantity) => {
     const ObjectToAdd = {
       id, name, price, stock, quantity
     }
+
     console.log(ObjectToAdd)
     console.log ('se ha agregado', quantity)
-    SetObjectAdded(ObjectToAdd)
+    SetObjectAdded(objectAdded)
+    handleAdd (quantity)
+  }
+
+  const handleAdd = (count) => {
+    const productObj = {
+      id, name, price, quantity: count
+    }
+    addItem(productObj)
+
   }
 
   const handleSizeClick = (size) => {
@@ -73,7 +85,7 @@ export const ItemDetail = ({name, img, category, description, stock, price, id})
         
         <p className="stock lead">Stock disponible: <strong>{stock}</strong></p>
         <div className="cart-container">
-          {ObjectCartAdded ? (
+          {IsInCart(id) ? (
             <footer>
               <Link className="FinalizePurchase" to="/cart">Finalizar compra</Link>
             </footer>

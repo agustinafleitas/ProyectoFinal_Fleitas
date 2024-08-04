@@ -3,7 +3,7 @@ import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
-const navbar = ({CartCount})=> {
+const navbar = ()=> {
     return (
         <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -31,7 +31,7 @@ const navbar = ({CartCount})=> {
                         </li>
                     </ul>
                     <form className="d-flex">
-                    <CartWidget CartCount={CartCount}/> 
+                    <CartWidget/> 
                     </form>
                 </div>
             </div>
