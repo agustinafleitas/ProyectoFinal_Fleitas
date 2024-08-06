@@ -25,9 +25,17 @@ export const CartProvider = ({children}) =>{
         return accu;
     }
 
+    const GetTotal = () => {
+        let accu = 0
+        cart.forEach((item) => {
+            accu += item.quantity * item.price
+        })
+        return accu
+    }
+
     const totalQuantity = GetTotalQuantity();
 
-    const value = { cart, IsInCart, addItem, totalQuantity };
+    const value = { cart, IsInCart, addItem, totalQuantity, GetTotal };
     return (
         <CartContext.Provider value={ value }>
             {children}
