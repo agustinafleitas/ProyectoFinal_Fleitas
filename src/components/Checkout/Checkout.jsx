@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useCart } from "../../hooks/useCart";
 import { addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
 import { DataBase } from "../../services/firebase";
+import "./Checkout.css"
 
 function Checkout() {
     const [carga, setCarga] = useState(false);
     const [ orderCreated, setOrderCreated] = useState (false);
+    const [orderFailed, setOrderFailed] = useState (false);
     const [FormData, SetFormData] = useState({
         name: "",
         lastname:"",
@@ -25,6 +27,9 @@ function Checkout() {
     const createOrder = async (event) => {
         event.preventDefault();
         setCarga(true);
+        setOrderCreated(false);
+        setOrderFailed(false);
+
         try {
             const objOrder = {
                 buyer: {
@@ -64,38 +69,41 @@ function Checkout() {
 
                 if (OutOfStock.length === 0) {
                     await batch.commit()
-
                     const OrderRefe = collection(DataBase, "orders");
                     const OrderAdded = await addDoc(OrderRefe, objOrder);
                     console.log (`El ID de su orden es ${OrderAdded.id}`);
                     setOrderCreated(true)
-                } else {
-                    console.log ("No quedan stock de algunos productos")
+                } else { 
+                    setOrderFailed(true); 
                 }
 
         } catch (error) {
-            console.log("")
+            console.log("Error al crear la orden")
+            setOrderFailed(true);
         } finally {
             setCarga(false)
         }
+    };
 
-        if (carga){
-            return (
-            <div className="loading-container d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
-                <div className="spinner-border custom-spinner">
-
-                </div>
-            <h3 className="loadingText mt-3">Cargando...</h3>
-            </div>)
-        }
-
-        if (orderCreated) {
-            return <h1>La orden fue creada correctamente</h1>
-        }
-
-    }
     return (
         <>
+        {carga && (
+            <div className="loading-container d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
+                <div className="spinner-border custom-spinner"></div>
+                <h3 className="loadingText mt-3">Cargando...</h3>
+            </div>
+        )}
+
+        {orderCreated && !carga && <h1>La orden fue creada correctamente</h1>}
+
+        {orderFailed && !carga && (
+            <div className="alert alert-warning" role="alert">
+                No quedan stock de algunos productos, por favor, vuelve a revisar el stock disponible
+            </div>
+        )}
+
+        {!carga && !orderCreated && !orderFailed && (
+
         <div>
             <div>
                 <h1>Checkout</h1>
@@ -110,9 +118,9 @@ function Checkout() {
                 <button className="btnSendInfo" type="submit">Envíar datos</button>
             </form>
         </div>
-            
+        )}
         </>
-    )
+    );
 }
 
 export default Checkout

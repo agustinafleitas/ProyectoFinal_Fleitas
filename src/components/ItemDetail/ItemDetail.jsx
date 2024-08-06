@@ -10,8 +10,20 @@ export const ItemDetail = ({name, img, category, description, stock, price, id})
   const {addItem, IsInCart} = useCart()
 
   const handleOnAdd = (quantity) => {
+    if (category === "ropa" || category === "collares") {
+      if (!selectedSize) {
+        alert ("Por favor, seleccione una talla");
+        return;
+      }
+    }
     const ObjectToAdd = {
-      id, name, price, stock, quantity
+      id, 
+      name, 
+      price, 
+      stock, 
+      quantity,
+      size: selectedSize,
+      img
     }
 
     console.log(ObjectToAdd)
@@ -22,7 +34,12 @@ export const ItemDetail = ({name, img, category, description, stock, price, id})
 
   const handleAdd = (count) => {
     const productObj = {
-      id, name, price, quantity: count
+      id, 
+      name, 
+      price, 
+      quantity: count,
+      size: selectedSize,
+      img
     }
     addItem(productObj)
 
@@ -61,7 +78,7 @@ export const ItemDetail = ({name, img, category, description, stock, price, id})
         <hr />
         
         {/*Agergar botones de "talla" unicamente a los elementos con categoria ropa y collar*/}
-        {(category === "ropa" || category === "collar") && (
+        {(category === "ropa" || category === "collares") && (
           <div className="sizes">
             <div className="size-header">
               <h6 className="lead"><strong>Selecciona una talla:</strong></h6>

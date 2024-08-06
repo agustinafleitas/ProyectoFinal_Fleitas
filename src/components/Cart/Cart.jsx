@@ -10,7 +10,7 @@ export const Cart = () => {
     if (totalQuantity === 0) {
         return <div>
                 <h1>Aun no tienes productos en el carrito</h1>
-                <Link to='/' className="Option">Productos</Link>
+                <Link to='/' className="Option">Ve a nuestro catalogo de productos para comenzar a agregar productos en tu carrito</Link>
             </div>
         
     }
