@@ -1,9 +1,13 @@
 .nav-item {
-    margin-right: 30px;
+    display: flex; 
+    align-items: center; 
+    margin: 0 15px;
 }
 
 .navbar{
     padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
 }
 
 .nav-link {
@@ -13,6 +17,17 @@
     width: 150px;
     transition: background-color 0.3s, transform 0.3s;
     text-align: center;
+}
+
+.categoriesSeccion {
+    background: #ececec;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    display: flex;
+    gap: 10px; 
+    align-items: center; 
 }
 
 #imagen {
@@ -25,7 +40,7 @@
 }
 
 /* Estilos área de los botones del navbar */
-#inicio {
+#inicio.ActiveOption {
     background: rgb(0,199,236);
     border-radius: 20px;
     color: white;
@@ -46,7 +61,7 @@
     color: white;
 }
 
-#sobreNosotros{
+#sobreNosotros.ActiveOption{
     background: rgb(255,183,0);
     border-radius: 20px;
     color: white;
@@ -59,3 +74,16 @@
     color: white;
 }
 
+.ActiveOption {
+    background: rgb(255,66,94);
+    border-radius: 20px;
+    transform: scale(1.05);
+    color: white;
+    display: inline-block;
+    padding: 10px 15px;;
+    border-radius: 20px; 
+    width: 150px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
