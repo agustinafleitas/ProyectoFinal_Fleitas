@@ -1,0 +1,11 @@
+.loading-container {
+    height: 100vh;
+}
+
+.loadingText {
+    color: rgb(255,66,94);
+}
+
+.custom-spinner {
+    border-top-color: rgb(255,66,94);
+}

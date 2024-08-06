@@ -7,22 +7,27 @@ import { DataBase } from '../../services/firebase'
 
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState (null);
-  const [loading, setLoading] = useState(true);
+  const [carga, setCarga] = useState(true);
   const { id } = useParams();
 
   useEffect(()=> {
-    setLoading(true);
+    setCarga(true);
     getDoc(doc(DataBase, "products", id))
     .then((querySnapshot)=>{
       const product = {id: querySnapshot.id, ...querySnapshot.data()}
       setProduct(product)
     })
     .catch((err)=> console.log(err))
-    .finally(()=> setLoading(false));
+    .finally(()=> setCarga(false));
   }, [id])
 
-  if (loading) {
-    return <h3>Cargando productos, por favor espere...</h3>
+  if (carga) {
+    return <div className="loading-container d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
+              <div className="spinner-border custom-spinner">
+
+              </div>
+            <h3 className="loadingText mt-3">Cargando...</h3>
+            </div>
   }
   return (
     <div>

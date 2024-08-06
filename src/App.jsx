@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css"
 import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
@@ -19,13 +18,6 @@ function App() {
       <Route path="/" element={
           <>
             <ItemListContainer greetings="¡Bienvenido a Puppies!" />
-            <div className="container mt-4">
-              <div className="row">
-                <div className="col">
-                  <img src={images.EnConstruccion} alt="En Construcción" className="ConstructionImage"/>
-                </div>
-              </div>
-            </div>
           </>
       }/>
         <Route path="/category/:id" element={<ItemListContainer/>} />

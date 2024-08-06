@@ -3,14 +3,15 @@ import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { DataBase } from "../../services/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import "./ItemListContainer.css"
 
 const ItemListContainer = ({greetings}) => {
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [carga, setCarga] = useState(true);
     const { id } = useParams ();
 
     useEffect(()=>{
-        setLoading(true);
+        setCarga(true);
         const collectionRef = id
         ? query(collection(DataBase, "products"), where("category", "==", id))
         : collection(DataBase, "products")
@@ -28,13 +29,18 @@ const ItemListContainer = ({greetings}) => {
             console.log("Error fetching products:", error);
         })
         .finally(() => {
-            setLoading(false);
+            setCarga(false);
         });
     }, [id]);
 
-    if (loading) {
+    if (carga) {
         return (
-            <h3>Cargando...</h3>
+            <div className="loading-container d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
+                <div className="spinner-border custom-spinner">
+
+                </div>
+            <h3 className="loadingText mt-3">Cargando...</h3>
+            </div>
         );
     }
 

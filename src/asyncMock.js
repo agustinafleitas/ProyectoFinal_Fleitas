@@ -107,6 +107,7 @@ const products = [
         stock: 2,
         description: "Piña convertida en una divertida, cómoda y calentita cama para mascotas. Esta divertida cama ofrece un lugar acojedor para que tu amigo peludo duerma feliz.",
     },
+    //Sigo a partir del pato
     {
         id: "13",
         name: "Ducky, el pato de peluche",
