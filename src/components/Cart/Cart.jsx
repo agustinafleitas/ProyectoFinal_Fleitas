@@ -9,9 +9,9 @@ export const Cart = () => {
     const total = GetTotal()
 
     if (totalQuantity === 0) {
-        return <div>
+        return <div className="empty-cart-container">
                 <h1>Aun no tienes productos en el carrito</h1>
-                <Link to='/' className="Option">Ve a nuestro catalogo de productos para comenzar a agregar productos en tu carrito</Link>
+                <Link to='/' className="Option">Explora nuestro catálogo</Link>
             </div>
         
     }

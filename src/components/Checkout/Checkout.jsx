@@ -12,6 +12,7 @@ function Checkout() {
         name: "",
         lastname:"",
         email:"",
+        confiEmail: "",
         phone:"",
     })
 
@@ -29,6 +30,12 @@ function Checkout() {
         setCarga(true);
         setOrderCreated(false);
         setOrderFailed(false);
+
+        if (FormData.email !== FormData.confiEmail) {
+            alert("Los correos electrónicos no coinciden. Por favor, revisa la información ingresada.");
+            setCarga(false);
+            return;
+        }
 
         try {
             const objOrder = {
@@ -109,10 +116,11 @@ function Checkout() {
                     <h1>Checkout</h1>
                     <p>Completa los siguientes campos para procesar tu compra</p>
                     <form onSubmit={createOrder}>
-                        <input type="text" name="name" placeholder="Nombre" onChange={handleInputChange} required />
-                        <input type="text" name="lastname" placeholder="Apellido" onChange={handleInputChange} required />
-                        <input type="text" name="email" placeholder="Correo electrónico" onChange={handleInputChange} required />
-                        <input type="number" name="phone" placeholder="Teléfono" onChange={handleInputChange} required />
+                        <input type="text" name="name" placeholder="Nombre" onChange={handleInputChange} value={FormData.name} required />
+                        <input type="text" name="lastname" placeholder="Apellido" onChange={handleInputChange} value={FormData.lastname} required />
+                        <input type="text" name="email" placeholder="Correo electrónico" onChange={handleInputChange} value={FormData.email} required />
+                        <input type="text" name="confiEmail" placeholder="Confirmar correo electrónico" onChange={handleInputChange}  value={FormData.confiEmail} required />
+                        <input type="number" name="phone" placeholder="Teléfono" onChange={handleInputChange} value={FormData.phone} required />
                         <button className="btnSendInfo" type="submit">Envíar datos</button>
                     </form>
                 </div>
