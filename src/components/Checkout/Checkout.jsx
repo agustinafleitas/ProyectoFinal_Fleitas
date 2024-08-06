@@ -86,42 +86,38 @@ function Checkout() {
     };
 
     return (
-        <>
-        {carga && (
-            <div className="loading-container">
-                <div className="ball">
-                    <div className="middle"></div>
+        <div className="checkout-container">
+            {carga && (
+                <div className="loading-container">
+                    <div className="ball">
+                        <div className="middle"></div>
+                    </div>
+                    <h3 className="loadingText">Estamos creando su orden</h3>
                 </div>
-                <h3 className="loadingText">Estamos creando su orden</h3>
-            </div>
-        )}
+            )}
 
-        {orderCreated && !carga && <h1>La orden fue creada correctamente</h1>}
+            {orderCreated && !carga && <h1>La orden fue creada correctamente</h1>}
 
-        {orderFailed && !carga && (
-            <div className="alert alert-warning" role="alert">
-                No quedan stock de algunos productos, por favor, vuelve a revisar el stock disponible
-            </div>
-        )}
+            {orderFailed && !carga && (
+                <div className="alert alert-warning" role="alert">
+                    Lo sentimos, no quedan stock de algunos productos, por favor, vuelve a revisar el stock disponible
+                </div>
+            )}
 
-        {!carga && !orderCreated && !orderFailed && (
-
-        <div>
-            <div>
-                <h1>Checkout</h1>
-                <p>Completa los siguientes campos para procesar tu compra</p>
-            </div>
-            <form onSubmit={createOrder}>
-                <input type="text" name="name" placeholder="Nombre" onChange={handleInputChange} required/>
-                <input type="text" name="lastname" placeholder="Apellido" onChange={handleInputChange} required/>
-                <input type="text" name="email" placeholder="Correo electrónico" onChange={handleInputChange} required/>
-                <input type="number" name="phone" placeholder="Teléfono" onChange={handleInputChange} required/>
-
-                <button className="btnSendInfo" type="submit">Envíar datos</button>
-            </form>
+            {!carga && !orderCreated && !orderFailed && (
+                <div>
+                    <h1>Checkout</h1>
+                    <p>Completa los siguientes campos para procesar tu compra</p>
+                    <form onSubmit={createOrder}>
+                        <input type="text" name="name" placeholder="Nombre" onChange={handleInputChange} required />
+                        <input type="text" name="lastname" placeholder="Apellido" onChange={handleInputChange} required />
+                        <input type="text" name="email" placeholder="Correo electrónico" onChange={handleInputChange} required />
+                        <input type="number" name="phone" placeholder="Teléfono" onChange={handleInputChange} required />
+                        <button className="btnSendInfo" type="submit">Envíar datos</button>
+                    </form>
+                </div>
+            )}
         </div>
-        )}
-        </>
     );
 }
 
