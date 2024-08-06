@@ -18,12 +18,10 @@ const ItemListContainer = ({greetings}) => {
 
         getDocs(collectionRef)
         .then((querySnapshot)=>{
-            console.log("querySnapshot:", querySnapshot);
             const products = querySnapshot.docs.map((doc)=>{
                 return {id: doc.id, ...doc.data()}
             })
             setProducts(products)
-            console.log("Products fetched from Firebase:", products);
         })
         .catch(error => {
             console.log("Error fetching products:", error);

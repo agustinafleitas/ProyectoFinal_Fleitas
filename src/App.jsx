@@ -5,7 +5,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import AboutUs from "./components/AboutUs/AboutUs"
 import { CartProvider } from "./context/CartContext";
-import images from "./components/imagenes/images";
 import Cart  from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 

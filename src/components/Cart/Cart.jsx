@@ -19,7 +19,10 @@ export const Cart = () => {
         <div className="CartContainer">
             <h2 className="text-center display-3 font-weight-bold text-light bg-info py-3 px-4 rounded shadow-inner">Tu carrito</h2>
             {cart.map((item) =>(
-                <CartItem key={item.id} {...item} onRemove={removeItem}/>
+                <div key={item.id} className="cart-item">
+                    <CartItem key={item.id} {...item} onRemove={removeItem}/>
+                    <p className="item-date">Fecha de compra: {item.dateAdded}</p>
+                </div>
             ))}
             <h3 className="PriceTotal">Total: $ {total}</h3>
             <div>

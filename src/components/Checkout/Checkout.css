@@ -5,14 +5,6 @@
     border-radius: 8px;
 }
 
-
-.checkout-container h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
-    color: rgb(255,66,94);
-    text-align: center;
-}
-
 .checkout-container p {
     font-size: 20px;
     margin-bottom: 20px;
@@ -100,4 +92,30 @@
     background-color: #ffecb5;
     color: #856404;
     border: 1px solid #ffeeba;
+}
+
+.successOrderContainer {
+    text-align: center;
+    padding: 60px;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 12px;
+    background-color: rgb(219, 240, 253);
+    border: 2px solid rgb(63, 158, 221); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.successMessage {
+    color: rgb(63, 158, 221); 
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.orderId {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: #f2fafd; 
+    padding: 0.5rem;
+    border-radius: 6px;
 }

@@ -8,6 +8,7 @@ function Checkout() {
     const [carga, setCarga] = useState(false);
     const [ orderCreated, setOrderCreated] = useState (false);
     const [orderFailed, setOrderFailed] = useState (false);
+    const [orderId, setOrderId] = useState(null);
     const [FormData, SetFormData] = useState({
         name: "",
         lastname:"",
@@ -16,7 +17,7 @@ function Checkout() {
         phone:"",
     })
 
-    const { cart, totalQuantity, GetTotal } = useCart()
+    const { cart, totalQuantity, GetTotal, ClearCart } = useCart()
     const total = GetTotal()
 
     const handleInputChange = (event) => {
@@ -30,6 +31,7 @@ function Checkout() {
         setCarga(true);
         setOrderCreated(false);
         setOrderFailed(false);
+        setOrderId(null);
 
         if (FormData.email !== FormData.confiEmail) {
             alert("Los correos electrónicos no coinciden. Por favor, revisa la información ingresada.");
@@ -78,8 +80,9 @@ function Checkout() {
                     await batch.commit()
                     const OrderRefe = collection(DataBase, "orders");
                     const OrderAdded = await addDoc(OrderRefe, objOrder);
-                    console.log (`El ID de su orden es ${OrderAdded.id}`);
+                    setOrderId(OrderAdded.id);
                     setOrderCreated(true)
+                    ClearCart();
                 } else { 
                     setOrderFailed(true); 
                 }
@@ -103,7 +106,12 @@ function Checkout() {
                 </div>
             )}
 
-            {orderCreated && !carga && <h1>La orden fue creada correctamente</h1>}
+            {orderCreated && !carga && (
+                <div className="successOrderContainer">
+                    <h1 className="successMessage">La orden fue creada correctamente</h1>
+                    {orderId && <p className="orderId">Tu ID de orden es: {orderId}</p>}
+                </div>
+            )}
 
             {orderFailed && !carga && (
                 <div className="alert alert-warning" role="alert">

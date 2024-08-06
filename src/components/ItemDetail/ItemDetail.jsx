@@ -27,7 +27,6 @@ export const ItemDetail = ({name, img, category, description, stock, price, id})
     }
 
     console.log(ObjectToAdd)
-    console.log ('se ha agregado', quantity)
     SetObjectAdded(objectAdded)
     handleAdd (quantity)
   }

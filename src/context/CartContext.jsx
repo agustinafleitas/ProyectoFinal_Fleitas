@@ -10,8 +10,13 @@ export const CartProvider = ({children}) =>{
         return cart.some((prod) => prod.id === id)
     }
     const addItem = (ProductToAdd) =>{
+        const productWithDate = {
+            ...ProductToAdd,
+            dateAdded: new Date().toLocaleDateString(),
+        };
+
         if(!IsInCart (ProductToAdd.id)) {
-            setCart((prev) => [...prev, ProductToAdd])
+            setCart((prev) => [...prev, productWithDate])
         } else {
             console.error('El producto ya está en el carrito')
         }
