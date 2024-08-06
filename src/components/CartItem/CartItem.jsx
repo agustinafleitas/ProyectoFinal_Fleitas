@@ -1,13 +1,24 @@
+import { useCart } from "../../hooks/useCart"
+import "./CartItem.css"
 
-const CartItem = ({ name, quantity, price, size, img }) => {
+const CartItem = ({ id, name, quantity, price, size, img }) => {
+    const { removeItem } = useCart();
     return (
-        <article>
+        <article className="ItemCart">
             <img src={img} alt={name} />
-            <div>
-                <h3>{name} - Talla: {size ? `Tamaño ${size}` : "No especificado"}</h3>
-                <p>Cantidad: {quantity}</p>
-                <p>Precio por unidad: $ {price}</p>
+            <div className="ItemDetails">
+                <div className="ItemInfo">
+                    <h3>{name}</h3>
+                    <p> {size ? `Tamaño: ${size}`: ""}</p>
+                </div>
+                <div className="ItemInfo">
+                    <p>Cantidad: {quantity}</p>
+                </div>
+                <div className="ItemInfo">
+                    <p>Precio por unidad: $ {price}</p>
+                </div>
             </div>
+            <button onClick={() => removeItem(id)} className="btnRemoveItem">Eliminar</button>
         </article>
     )
 }

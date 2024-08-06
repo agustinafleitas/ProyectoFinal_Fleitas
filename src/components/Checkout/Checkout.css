@@ -1,0 +1,33 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.ball {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    background-color: #d9e45e;
+    position: relative;
+    animation: bounce 1.5s infinite;
+}
+
+.loadingText {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #555;
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}

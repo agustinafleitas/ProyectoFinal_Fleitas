@@ -88,9 +88,11 @@ function Checkout() {
     return (
         <>
         {carga && (
-            <div className="loading-container d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
-                <div className="spinner-border custom-spinner"></div>
-                <h3 className="loadingText mt-3">Cargando...</h3>
+            <div className="loading-container">
+                <div className="ball">
+                    <div className="middle"></div>
+                </div>
+                <h3 className="loadingText">Estamos creando su orden</h3>
             </div>
         )}
 
