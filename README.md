@@ -26,7 +26,7 @@ Mi proyecto reutiliza elementos del curso que realicé de Photoshop y Adobe Illu
 
 - **React.js**: Biblioteca principal para el desarrollo de la interfaz de usuario.
 - **Firebase**: Para la gestión de datos en tiempo real.
-- **Bootstrap**: Para el diseño responsivo y estructural.
+- **Bootstrap**: Para el diseño estructural.
 - **CSS**: Estilos personalizados para el diseño de la tienda.
 
 
