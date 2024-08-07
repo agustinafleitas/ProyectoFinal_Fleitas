@@ -124,3 +124,13 @@
     color: #333;
     font-weight: bold;
 }
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+}

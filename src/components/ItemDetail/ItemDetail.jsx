@@ -7,6 +7,7 @@ import { useCart } from "../../hooks/useCart";
 export const ItemDetail = ({name, img, category, description, stock, price, id}) => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [objectAdded, SetObjectAdded] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null);
   const {addItem, IsInCart} = useCart()
 
   const handleOnAdd = (quantity) => {
@@ -32,6 +33,10 @@ export const ItemDetail = ({name, img, category, description, stock, price, id})
   }
 
   const handleAdd = (count) => {
+    if (count > stock) { 
+      setErrorMessage('No hay suficiente stock para agregar el producto al carrito.');
+      setTimeout(() => setErrorMessage(""), 3000);
+    } 
     const productObj = {
       id, 
       name, 
@@ -112,6 +117,9 @@ export const ItemDetail = ({name, img, category, description, stock, price, id})
           )}
           
         </div>
+        {errorMessage && (
+          <div className="error-message">{errorMessage}</div>
+        )}
       </div>
     </article>
   )
