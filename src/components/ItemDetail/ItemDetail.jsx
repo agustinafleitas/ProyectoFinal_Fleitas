@@ -1,9 +1,53 @@
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 import { useState } from "react";
+import { useCart } from "../../hooks/useCart";
 
-export const ItemDetail = ({name, img, category, description, stock, price}) => {
+export const ItemDetail = ({name, img, category, description, stock, price, id}) => {
   const [selectedSize, setSelectedSize] = useState(null);
+  const [objectAdded, SetObjectAdded] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null);
+  const {addItem, IsInCart} = useCart()
+
+  const handleOnAdd = (quantity) => {
+    if (category === "ropa" || category === "collares") {
+      if (!selectedSize) {
+        alert ("Por favor, seleccione una talla");
+        return;
+      }
+    }
+    const ObjectToAdd = {
+      id, 
+      name, 
+      price, 
+      stock, 
+      quantity,
+      size: selectedSize,
+      img
+    }
+
+    console.log(ObjectToAdd)
+    SetObjectAdded(objectAdded)
+    handleAdd (quantity)
+  }
+
+  const handleAdd = (count) => {
+    if (count > stock) { 
+      setErrorMessage('No hay suficiente stock para agregar el producto al carrito.');
+      setTimeout(() => setErrorMessage(""), 3000);
+    } 
+    const productObj = {
+      id, 
+      name, 
+      price, 
+      quantity: count,
+      size: selectedSize,
+      img
+    }
+    addItem(productObj)
+
+  }
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
@@ -38,7 +82,7 @@ export const ItemDetail = ({name, img, category, description, stock, price}) => 
         <hr />
         
         {/*Agergar botones de "talla" unicamente a los elementos con categoria ropa y collar*/}
-        {(category === "ropa" || category === "collar") && (
+        {(category === "ropa" || category === "collares") && (
           <div className="sizes">
             <div className="size-header">
               <h6 className="lead"><strong>Selecciona una talla:</strong></h6>
@@ -60,11 +104,22 @@ export const ItemDetail = ({name, img, category, description, stock, price}) => 
           </div>
         )}
         
-        <p className="stock lead">Stock disponible: <strong>{stock}</strong> </p>
+        <p className="stock lead">Stock disponible: <strong>{stock}</strong></p>
         <div className="cart-container">
-          <ItemCount stock={stock} />
-          <button className="CartSend">Agregar al carrito</button>
+          {IsInCart(id) ? (
+            <footer>
+              <Link className="FinalizePurchase" to="/cart">Finalizar compra</Link>
+            </footer>
+          ) : (
+            <>
+              <ItemCount stock={stock} initial={1} onAdd={handleOnAdd} />
+            </>
+          )}
+          
         </div>
+        {errorMessage && (
+          <div className="error-message">{errorMessage}</div>
+        )}
       </div>
     </article>
   )

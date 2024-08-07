@@ -134,6 +134,8 @@ const products = [
         stock: 20,
         description: "Añade un toque de color y comodidad al guardarropa de tu perro con esta sudadera vibrante y acogedora. Perfecta para mantener a tu mascota abrigada en los días frescos, esta sudadera con capucha combina estilo y funcionalidad, garantizando que tu perro luzca adorable y se sienta cómodo en cualquier ocasión.",
     },
+
+    //Me quede en la sudadera para gatos
     {
         id: "16",
         name: "Sudadera con diseño de dinosaurio para gatos",
