@@ -1,29 +1,46 @@
 import { useEffect, useState } from "react";
-import {getProductsByCategory } from "../../asyncMock";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { DataBase } from "../../services/firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import "./ItemListContainer.css"
 
 const ItemListContainer = ({greetings}) => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
+    const [carga, setCarga] = useState(true);
     const { id } = useParams ();
 
-    console.log(id);
-
     useEffect(()=>{
-        if(id) {
-            getProductsByCategory(id)
-            .then((res)=>{
-                setProducts(res)
+        setCarga(true);
+        const collectionRef = id
+        ? query(collection(DataBase, "products"), where("category", "==", id))
+        : collection(DataBase, "products")
+
+        getDocs(collectionRef)
+        .then((querySnapshot)=>{
+            const products = querySnapshot.docs.map((doc)=>{
+                return {id: doc.id, ...doc.data()}
             })
-            .catch((err)=> console.log(err))
-        } else {
-            getProductsByCategory(id)
-            .then((res)=>{
-                setProducts(res)
-            })
-            .catch ((err)=>console.log(err))
-        }
+            setProducts(products)
+        })
+        .catch(error => {
+            console.log("Error fetching products:", error);
+        })
+        .finally(() => {
+            setCarga(false);
+        });
     }, [id]);
+
+    if (carga) {
+        return (
+            <div className="loading-container d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
+                <div className="spinner-border custom-spinner">
+
+                </div>
+            <h3 className="loadingText mt-3">Cargando...</h3>
+            </div>
+        );
+    }
 
     return (
         <>

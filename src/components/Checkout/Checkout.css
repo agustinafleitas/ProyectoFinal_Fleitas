@@ -1,0 +1,121 @@
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.checkout-container p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.checkout-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.checkout-container input:focus {
+    border-color:  rgb(255,66,94);
+    outline: none;
+}
+
+.btnSendInfo {
+    background-color:rgb(0,199,236);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btnSendInfo:hover {
+    background-color: rgb(63, 158, 221);
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.loading-container .ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    position: relative;
+    animation: spin 1s infinite linear;
+}
+
+.loading-container .ball .middle {
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loadingText {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.alert-warning {
+    background-color: #ffecb5;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.successOrderContainer {
+    text-align: center;
+    padding: 60px;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 12px;
+    background-color: rgb(219, 240, 253);
+    border: 2px solid rgb(63, 158, 221); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.successMessage {
+    color: rgb(63, 158, 221); 
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.orderId {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: #f2fafd; 
+    padding: 0.5rem;
+    border-radius: 6px;
+}
