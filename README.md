@@ -30,6 +30,9 @@ Mi proyecto reutiliza elementos del curso que realicé de Photoshop y Adobe Illu
 - **CSS**: Estilos personalizados para el diseño de la tienda.
 
 
+## Demostración algunas funcionalidades (enlace a video YouTube): `https://youtu.be/L3YBRCilKX0`
+
+
 ## Instalación
 
 1. Clona el repositorio:
