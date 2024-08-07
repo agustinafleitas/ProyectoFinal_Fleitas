@@ -14,10 +14,10 @@ Mi proyecto reutiliza elementos del curso que realicé de Photoshop y Adobe Illu
 - **Integración con Firebase**: Maneja datos en tiempo real y verificación de stock.
 - **Uso de Bootstrap y CSS Personalizado**: Combinación de herramientas para un diseño responsivo y adaptado a las necesidades del proyecto.
 - **Selección de Cantidad de Stock**: Los usuarios pueden seleccionar la cantidad de producto que desean agregar al carrito, siempre que haya stock disponible. Esto se maneja mediante un componente de selección de cantidad que permite a los usuarios especificar la cantidad deseada.
--**Selección de Tallas para Collares y Ropa**: Para productos de categoría "ropa" y "collares", los usuarios pueden elegir entre diferentes tallas. La selección de talla se visualiza en el detalle del producto y se incluye en el carrito de compras.
--**Indicador de Disponibilidad de Stock en el Carrito**: Si un producto queda sin stock mientras estas procesando la compra, el sistema actualiza el carrito para reflejar esta disponibilidad. Los usuarios son notificados si intentan agregar más productos de los disponibles.
--**Generación de ID de Orden con Firebase en el Checkout**: Durante el proceso de checkout, se genera un ID único para cada orden mediante Firebase. Este ID se muestra al usuario como confirmación de la compra exitosa.
--**Mensajes de Error**: Se agregaron mensajes de error en caso de:
+- **Selección de Tallas para Collares y Ropa**: Para productos de categoría "ropa" y "collares", los usuarios pueden elegir entre diferentes tallas. La selección de talla se visualiza en el detalle del producto y se incluye en el carrito de compras.
+- **Indicador de Disponibilidad de Stock en el Carrito**: Si un producto queda sin stock mientras estas procesando la compra, el sistema actualiza el carrito para reflejar esta disponibilidad. Los usuarios son notificados si intentan agregar más productos de los disponibles.
+- **Generación de ID de Orden con Firebase en el Checkout**: Durante el proceso de checkout, se genera un ID único para cada orden mediante Firebase. Este ID se muestra al usuario como confirmación de la compra exitosa.
+- **Mensajes de Error**: Se agregaron mensajes de error en caso de:
    - No haber stock suficiente para el producto que se desea agregar al carrito.
    - No encontrarse el producto en la base de datos o errores relacionados con la base de datos.
 
@@ -32,6 +32,6 @@ Mi proyecto reutiliza elementos del curso que realicé de Photoshop y Adobe Illu
 
 ## Demostraciones
 
--**Demostración algunas funcionalidades**: [Enlace a video en YouTube, haz clic aquí](https://youtu.be/L3YBRCilKX0)
--**Proyecto Photoshop y Adobe Illustrator**: [Enlace a Behance, haz clic aquí](https://www.behance.net/gallery/198993787/Puppies-esttica-de-mascotas)
--**Demostración del Puppies publicado**: [Enlace a Netlify, haz clic aquí](fabulous-bubblegum-e4ecb0.netlify.app)
+- **Demostración algunas funcionalidades**: [Enlace a video en YouTube, haz clic aquí](https://youtu.be/L3YBRCilKX0)
+- **Proyecto Photoshop y Adobe Illustrator**: [Enlace a Behance, haz clic aquí](https://www.behance.net/gallery/198993787/Puppies-esttica-de-mascotas)
+- **Demostración del Puppies publicado**: [Enlace a Netlify, haz clic aquí](fabulous-bubblegum-e4ecb0.netlify.app)
